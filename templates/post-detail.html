@@ -1,0 +1,19 @@
+
+<p> {{ post.title }}</p>
+<p> {{ post.content | safe}}</p>
+<p>{{ post.author }} | {{ post.created_on }}</p>
+
+
+<!-- Comment form -->
+<form method="POST" action="{% url 'comment_create' post.slug %}" >
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit">Submit Comment</button>
+</form>
+
+
+<!-- Display comments -->
+{% for comment in post.comments.all %}
+    <p>{{ comment.body | linebreaks }}</p>
+    <small>{{ comment.created_on }}</small>
+{% endfor %}

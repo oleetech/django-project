@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'RobotFont';
+  src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype'), /* Adjust the path and font file format as per your files */
+       url('../fonts/roboto/Roboto-Regular.woff') format('woff'),
+       url('../fonts/roboto/Roboto-Regular.woff2') format('woff2');
+}
